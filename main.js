@@ -6,16 +6,16 @@ function sleep (ms, value) {
 
 async function savePromiseToVariable () {
   const answer = sleep(2000, 42)
-  console.log(answer)
+  console.log('  ', answer)
 
   const resolvedAnswer = await answer
-  console.log(answer)
-  console.log('Resolved:', resolvedAnswer)
+  console.log('  ', answer)
+  console.log('  Resolved:', resolvedAnswer)
 }
 
 async function saveResolvedToVariable () {
   const answer = await sleep(500, 1337)
-  console.log('Resolved:', answer)
+  console.log('  Resolved:', answer)
 }
 
 function promiseChain () {
@@ -23,11 +23,11 @@ function promiseChain () {
 
   return sleep(1000, 'First')
     .then(value => {
-      console.log(value)
+      console.log('  ', value)
       return sleep(1000, 'Second')
     })
     .then(value => {
-      console.log(value)
+      console.log('  ', value)
     })
 }
 
